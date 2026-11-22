@@ -11,6 +11,8 @@
 .edit-toggle,.edit-tools button{border:0;border-radius:99px;background:var(--green);color:#fff;padding:11px 15px;font:600 13px 'DM Sans','Noto Sans KR',sans-serif;box-shadow:0 4px 14px #18352e35;cursor:pointer}.edit-toggle{position:fixed;left:20px;bottom:20px;z-index:20}.edit-tools{position:fixed;left:16px;right:16px;bottom:16px;z-index:21;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px;background:#fffefaee;border:1px solid var(--line);border-radius:16px;box-shadow:0 5px 20px #18352e22}.edit-tools[hidden]{display:none}.edit-tools button{padding:9px 12px}.edit-tools .secondary{background:#e9eee9;color:var(--ink);box-shadow:none}.edit-tools small{color:var(--muted);font-size:11px;flex:1 1 100%}body.is-editing main.wrap{outline:1px dashed var(--gold);outline-offset:5px}body.is-editing main.wrap:focus{outline:2px solid var(--green)}
 </style><style>
 .mobile-tab-select-wrap{display:none;margin:0 0 24px}.mobile-tab-select-wrap label{display:block;margin:0 0 7px 3px;color:var(--muted);font-size:12px;font-weight:700}.mobile-tab-select-wrap select{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--card);color:var(--green);font:700 15px 'DM Sans','Noto Sans KR',sans-serif;box-shadow:0 2px 10px #202c2b12}@media(max-width:650px){.tabs{display:none!important}.mobile-tab-select-wrap{display:block}}@media print{.mobile-tab-select-wrap{display:none!important}}
+</style><style>
+.map-shell{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 3px 14px #23372b05}.prague-map{display:block;width:100%;height:min(70vh,640px);min-height:420px;border:0}.map-link{display:flex;justify-content:flex-end;margin:12px 0 0}.map-link a{color:var(--green);font-weight:700;font-size:14px;text-decoration:none}.map-link a:hover{text-decoration:underline}@media(max-width:650px){.prague-map{height:62vh;min-height:380px}}
 </style></head><body><main class="wrap">
 <header class="hero"><div class="eyebrow">Central Europe · Winter escape</div><h1>프라하 &amp; 비엔나<br>6박 8일 여행</h1><p>고풍스러운 골목과 왕궁, 클래식 선율을 따라가는 중부 유럽 여정</p><div class="chips"><span class="chip">2027.02.27 (토) — 03.06 (토)</span><span class="chip">체코 🇨🇿 → 오스트리아 🇦🇹</span><span class="chip">프라하 3박 · 비엔나 3박</span></div></header>
 <section class="stats"><div class="stat"><small>OUTBOUND · 02.27</small><strong>인천 10:50 → 프라하 16:20</strong></div><div class="stat"><small>RAIL · 03.02</small><strong>프라하 → 비엔나 약 4시간</strong></div><div class="stat"><small>RETURN · 03.05–06</small><strong>비엔나 19:30 → 인천 14:30</strong></div></section>
@@ -19,8 +21,9 @@
   <button class="tab-btn" id="tab-itinerary" role="tab" type="button" aria-selected="true" aria-controls="panel-itinerary">1. 여행 일정</button>
   <button class="tab-btn" id="tab-checks" role="tab" type="button" aria-selected="false" aria-controls="panel-checks">2. 출국 전 예약 체크</button>
   <button class="tab-btn" id="tab-outfit" role="tab" type="button" aria-selected="false" aria-controls="panel-outfit">3. 옷차림</button>
+  <button class="tab-btn" id="tab-map" role="tab" type="button" aria-selected="false" aria-controls="panel-map">4. 지도</button>
 </nav>
-<div class="mobile-tab-select-wrap"><label for="mobile-tab-select">여행 정보 선택</label><select id="mobile-tab-select" aria-label="여행 정보 선택"><option value="tab-itinerary">1. 여행 일정</option><option value="tab-checks">2. 출국 전 예약 체크</option><option value="tab-outfit">3. 옷차림</option></select></div>
+<div class="mobile-tab-select-wrap"><label for="mobile-tab-select">여행 정보 선택</label><select id="mobile-tab-select" aria-label="여행 정보 선택"><option value="tab-itinerary">1. 여행 일정</option><option value="tab-checks">2. 출국 전 예약 체크</option><option value="tab-outfit">3. 옷차림</option><option value="tab-map">4. 지도</option></select></div>
 
 <section class="tab-panel" id="panel-itinerary" role="tabpanel" aria-labelledby="tab-itinerary">
 <div class="section-head"><h2>여행 일정</h2><p>현지 시각 기준 · 날짜별 핵심 동선</p></div>
@@ -75,6 +78,11 @@
     </ul>
   </article>
 </div>
+</section>
+<section class="tab-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
+<div class="section-head"><h2>프라하 지도</h2><p>지도를 움직이거나 확대해 장소를 살펴보세요.</p></div>
+<div class="map-shell"><iframe class="prague-map" title="프라하 구글 지도" src="https://www.google.com/maps?output=embed&amp;z=12&amp;q=Prague%2C+Czechia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prague%2C%20Czechia" target="_blank" rel="noopener noreferrer">Google 지도에서 크게 보기 ↗</a></p>
 </section>
 
 <footer class="footer"><span>여행 날짜: 2027년 2월 27일 — 3월 6일</span><span>※ 영업시간·교통편·입장 시간은 출발 전 공식 안내에서 재확인하세요.</span></footer>
