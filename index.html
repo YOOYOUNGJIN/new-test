@@ -12,9 +12,13 @@
 </style><style>
 .mobile-tab-select-wrap{display:none;margin:0 0 24px}.mobile-tab-select-wrap label{display:block;margin:0 0 7px 3px;color:var(--muted);font-size:12px;font-weight:700}.mobile-tab-select-wrap select{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--card);color:var(--green);font:700 15px 'DM Sans','Noto Sans KR',sans-serif;box-shadow:0 2px 10px #202c2b12}@media(max-width:650px){.tabs{display:none!important}.mobile-tab-select-wrap{display:block}}@media print{.mobile-tab-select-wrap{display:none!important}}
 </style><style>
-.map-shell{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 3px 14px #23372b05}.prague-map{display:block;width:100%;height:min(70vh,640px);min-height:420px;border:0}.map-link{display:flex;justify-content:flex-end;margin:12px 0 0}.map-link a{color:var(--green);font-weight:700;font-size:14px;text-decoration:none}.map-link a:hover{text-decoration:underline}@media(max-width:650px){.prague-map{height:62vh;min-height:380px}}
+.map-city{margin:0 0 28px}.map-city h3{margin:0 0 10px;color:var(--green);font-size:18px}.map-shell{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 3px 14px #23372b05}.city-map{display:block;width:100%;height:min(70vh,640px);min-height:420px;border:0}.map-link{display:flex;justify-content:flex-end;margin:12px 0 0}.map-link a{color:var(--green);font-weight:700;font-size:14px;text-decoration:none}.map-link a:hover{text-decoration:underline}@media(max-width:650px){.city-map{height:62vh;min-height:380px}}
+</style><style>
+.hero{background-image:linear-gradient(110deg,rgba(18,35,35,.86),rgba(31,53,50,.48)),url('https://upload.wikimedia.org/wikipedia/commons/5/50/Prague_skyline_view.jpg');background-size:cover;background-position:center 57%;background-repeat:no-repeat}.hero-credit{position:absolute;right:16px;bottom:9px;z-index:2;color:#ffffffd9;font-size:10px;text-decoration:none;text-shadow:0 1px 3px #0008}.hero-credit:hover{text-decoration:underline}@media(max-width:650px){.hero{background-position:center 55%;padding-bottom:58px}}
+</style><style>
+.photo-intro{margin:0 0 18px;padding:14px 18px;border-radius:13px;background:#e9eee9;color:var(--green);font-size:14px}.spot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.spot-card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:17px 18px;box-shadow:0 3px 14px #23372b05}.spot-card h3{margin:0 0 8px;color:var(--green);font-size:17px}.spot-card p{margin:0 0 9px;font-size:14px}.spot-tip{display:block;color:var(--muted);font-size:12px}.spot-link{display:inline-block;margin-top:10px;color:var(--green);font-size:12px;font-weight:700;text-decoration:none}.spot-link:hover{text-decoration:underline}.photo-source{margin:18px 0 0;color:var(--muted);font-size:12px}.photo-source a{color:var(--green)}@media(max-width:650px){.spot-grid{grid-template-columns:1fr}.spot-card{padding:15px}}
 </style></head><body><main class="wrap">
-<header class="hero"><div class="eyebrow">Central Europe · Winter escape</div><h1>프라하 &amp; 비엔나<br>6박 8일 여행</h1><p>고풍스러운 골목과 왕궁, 클래식 선율을 따라가는 중부 유럽 여정</p><div class="chips"><span class="chip">2027.02.27 (토) — 03.06 (토)</span><span class="chip">체코 🇨🇿 → 오스트리아 🇦🇹</span><span class="chip">프라하 3박 · 비엔나 3박</span></div></header>
+<header class="hero"><div class="eyebrow">Central Europe · Winter escape</div><h1>프라하 &amp; 비엔나<br>6박 8일 여행</h1><p>고풍스러운 골목과 왕궁, 클래식 선율을 따라가는 중부 유럽 여정</p><div class="chips"><span class="chip">2027.02.27 (토) — 03.06 (토)</span><span class="chip">체코 🇨🇿 → 오스트리아 🇦🇹</span><span class="chip">프라하 3박 · 비엔나 3박</span></div><a class="hero-credit" href="https://commons.wikimedia.org/wiki/File:Prague_skyline_view.jpg" target="_blank" rel="noopener noreferrer">Photo: MurderousPass / Wikimedia Commons (CC0)</a></header>
 <section class="stats"><div class="stat"><small>OUTBOUND · 02.27</small><strong>인천 10:50 → 프라하 16:20</strong></div><div class="stat"><small>RAIL · 03.02</small><strong>프라하 → 비엔나 약 4시간</strong></div><div class="stat"><small>RETURN · 03.05–06</small><strong>비엔나 19:30 → 인천 14:30</strong></div></section>
 
 <nav class="tabs" role="tablist" aria-label="여행 정보 탭">
@@ -22,8 +26,9 @@
   <button class="tab-btn" id="tab-checks" role="tab" type="button" aria-selected="false" aria-controls="panel-checks">2. 출국 전 예약 체크</button>
   <button class="tab-btn" id="tab-outfit" role="tab" type="button" aria-selected="false" aria-controls="panel-outfit">3. 옷차림</button>
   <button class="tab-btn" id="tab-map" role="tab" type="button" aria-selected="false" aria-controls="panel-map">4. 지도</button>
+  <button class="tab-btn" id="tab-photos" role="tab" type="button" aria-selected="false" aria-controls="panel-photos">5. 인생 사진 명소</button>
 </nav>
-<div class="mobile-tab-select-wrap"><label for="mobile-tab-select">여행 정보 선택</label><select id="mobile-tab-select" aria-label="여행 정보 선택"><option value="tab-itinerary">1. 여행 일정</option><option value="tab-checks">2. 출국 전 예약 체크</option><option value="tab-outfit">3. 옷차림</option><option value="tab-map">4. 지도</option></select></div>
+<div class="mobile-tab-select-wrap"><label for="mobile-tab-select">여행 정보 선택</label><select id="mobile-tab-select" aria-label="여행 정보 선택"><option value="tab-itinerary">1. 여행 일정</option><option value="tab-checks">2. 출국 전 예약 체크</option><option value="tab-outfit">3. 옷차림</option><option value="tab-map">4. 지도</option><option value="tab-photos">5. 인생 사진 명소</option></select></div>
 
 <section class="tab-panel" id="panel-itinerary" role="tabpanel" aria-labelledby="tab-itinerary">
 <div class="section-head"><h2>여행 일정</h2><p>현지 시각 기준 · 날짜별 핵심 동선</p></div>
@@ -80,9 +85,27 @@
 </div>
 </section>
 <section class="tab-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
-<div class="section-head"><h2>프라하 지도</h2><p>지도를 움직이거나 확대해 장소를 살펴보세요.</p></div>
-<div class="map-shell"><iframe class="prague-map" title="프라하 구글 지도" src="https://www.google.com/maps?output=embed&amp;z=12&amp;q=Prague%2C+Czechia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prague%2C%20Czechia" target="_blank" rel="noopener noreferrer">Google 지도에서 크게 보기 ↗</a></p>
+<div class="section-head"><h2>프라하 · 비엔나 지도</h2><p>지도를 움직이거나 확대해 각 도시를 살펴보세요.</p></div>
+<section class="map-city"><h3>🇨🇿 프라하</h3><div class="map-shell"><iframe class="city-map" title="프라하 구글 지도" src="https://www.google.com/maps?output=embed&amp;z=12&amp;q=Prague%2C+Czechia" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prague%2C%20Czechia" target="_blank" rel="noopener noreferrer">프라하 Google 지도에서 크게 보기 ↗</a></p></section>
+<section class="map-city"><h3>🇦🇹 비엔나</h3><div class="map-shell"><iframe class="city-map" title="비엔나 구글 지도" src="https://www.google.com/maps?output=embed&amp;z=12&amp;q=Vienna%2C+Austria" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="map-link"><a href="https://www.google.com/maps/search/?api=1&amp;query=Vienna%2C%20Austria" target="_blank" rel="noopener noreferrer">비엔나 Google 지도에서 크게 보기 ↗</a></p></section>
+</section>
+
+<section class="tab-panel" id="panel-photos" role="tabpanel" aria-labelledby="tab-photos" hidden>
+<div class="section-head"><h2>인생 사진 건지기 좋은 프라하 명소</h2><p>전망·건축·야경을 담기 좋은 10곳</p></div>
+<p class="photo-intro">참고 페이지의 명소 10곳을 짧게 요약했어요. 프라하 일정 중 동선에 맞춰 골라보세요.</p>
+<div class="spot-grid">
+<article class="spot-card"><h3>01 · 프라하성</h3><p>성 비투스 대성당과 붉은 지붕을 배경으로 성곽의 웅장한 건축과 시내 전망을 함께 담을 수 있어요.</p><span class="spot-tip">사진 팁 · 성 안쪽 건축 디테일과 성곽 바깥 전망을 각각 남겨보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Prague+Castle%2C+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>02 · 프라하성 전망 카페</h3><p>프라하의 붉은 지붕과 구시가지가 내려다보이는 언덕 위 카페에서 풍경과 커피를 함께 담아보세요.</p><span class="spot-tip">사진 팁 · 전망 자리 이용 가능 여부와 영업시간을 방문 전에 확인하세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Prague+Castle+Starbucks" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>03 · 존 레논 벽</h3><p>색색의 그래피티가 겹겹이 쌓인 벽 앞에서 프라하의 자유와 평화의 상징을 배경으로 찍어보세요.</p><span class="spot-tip">사진 팁 · 벽 전체와 그래피티 한 부분을 각각 프레임에 담아보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=John+Lennon+Wall+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>04 · 카를교</h3><p>석상과 탑, 블타바강 너머 프라하성이 어우러지는 프라하 대표 풍경을 만날 수 있어요.</p><span class="spot-tip">사진 팁 · 이른 아침에는 다리 위 인파가 적어 풍경을 담기 좋습니다.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Charles+Bridge+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>05 · 카를교 야경</h3><p>해가 진 뒤 조명이 켜진 다리와 강변의 불빛이 낭만적인 야경을 만들어줘요.</p><span class="spot-tip">사진 팁 · 다리 위와 강변 산책로 양쪽에서 구도를 바꿔보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Charles+Bridge+Prague+night" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>06 · 스트라호프 수도원</h3><p>수도원의 역사적인 공간과 주변 언덕길에서 프라하성, 시내 지붕이 펼쳐지는 전망을 볼 수 있어요.</p><span class="spot-tip">사진 팁 · 도서관 등 실내 관람은 운영 시간과 입장 조건을 확인하세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Strahov+Monastery+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>07 · 스카이다이빙</h3><p>도시를 높은 곳에서 바라보는 액티비티 사진을 원한다면 고려할 만한 선택지예요.</p><span class="spot-tip">사진 팁 · 별도 예약이 필요하고 날씨에 따라 일정이 바뀔 수 있어요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=skydiving+Prague" target="_blank" rel="noopener noreferrer">업체·위치 검색 ↗</a></article>
+<article class="spot-card"><h3>08 · 레트나 공원</h3><p>블타바강을 가로지르는 여러 다리와 도시 전경을 높은 곳에서 한눈에 담을 수 있어요.</p><span class="spot-tip">사진 팁 · 해 질 무렵 도착해 노을에서 야경으로 바뀌는 풍경을 기다려보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Letna+Park+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>09 · 구시가지 광장</h3><p>틴 성당의 쌍둥이 첨탑과 파스텔빛 건물, 얀 후스 기념비가 둘러싼 광장 풍경이 인상적이에요.</p><span class="spot-tip">사진 팁 · 광장 가장자리에서 건물과 광장 분위기를 넓게 담아보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Old+Town+Square+Prague" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+<article class="spot-card"><h3>10 · 천문시계탑 전망대</h3><p>구시가지 광장의 상징적인 시계와 탑 위에서 내려다보는 지붕 풍경을 한 번에 즐길 수 있어요.</p><span class="spot-tip">사진 팁 · 시계 외관과 전망대에서 내려다본 구시가지 사진을 함께 남겨보세요.</span><a class="spot-link" href="https://www.google.com/maps/search/?api=1&amp;query=Prague+Astronomical+Clock" target="_blank" rel="noopener noreferrer">지도 보기 ↗</a></article>
+</div>
+<p class="photo-source">명소 구성 참고: <a href="https://info.heretravel.co.kr/post/1388#tag10" target="_blank" rel="noopener noreferrer">여기트래블 · 프라하 관광지 BEST 10 원문 보기</a></p>
 </section>
 
 <footer class="footer"><span>여행 날짜: 2027년 2월 27일 — 3월 6일</span><span>※ 영업시간·교통편·입장 시간은 출발 전 공식 안내에서 재확인하세요.</span></footer>
